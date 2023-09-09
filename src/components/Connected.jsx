@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, IconButton, Snackbar } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-
 const Connected = (props) => {
   const dp =
     "https://im.indiatimes.in/content/2022/Jul/tere-naam_62d938217e409.jpg";

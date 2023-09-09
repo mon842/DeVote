@@ -6,7 +6,7 @@ import { contractAbi, contractAddress } from '../../Constant/constant';
 import Connected from '../Connected';
 import Login from '../Login';
 import Finished from '../Finished';
-import Header from '../Header/Header';
+
 
 const Voting = () => {
 
