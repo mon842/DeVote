@@ -1,13 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Voting from './components/Voting/Voting';
+import About from './Components/About/About';
+import Contract from './Components/Contact/Contract';
+import Voting from './Components/voting/Voting';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
+
   return (
-    <div>
-      <Voting/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<Voting />} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contract/>} />
+      </Routes>
+      
+    </BrowserRouter>
   );
+
+
+
 }
+
+
+
+
 
 export default App;
