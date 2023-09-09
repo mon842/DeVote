@@ -3,7 +3,8 @@ import { ethers } from 'ethers';
 
 import './Voting.css';
 import { contractAbi, contractAddress } from '../../Constant/constant';
-import Connected from '../Connected';
+// import Connected from '../Connected';
+import Connected from '../Connected2';
 import Login from '../Login';
 import Finished from '../Finished';
 
@@ -19,7 +20,7 @@ const Voting = () => {
   const [name, setName]=useState('');
   const [number, setNumber] = useState('');
   const [CanVote, setCanVote] = useState(true);
-
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     getCandidates();
@@ -38,6 +39,7 @@ const Voting = () => {
 
 
   async function vote() {
+    setOpen(true);
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
@@ -144,6 +146,8 @@ const Voting = () => {
     <div className='bg-[#141420]'>
 
       {votingStatus ? (isConnected ? (<Connected
+        open={open}
+        setOpen={setOpen}
         account={account}
         name={name}
         candidates={candidates}

@@ -8,7 +8,7 @@ const Form = (props) => {
                     <label className="block text-gray-100 text-sm font-bold mb-2" for="username">
                         Username
                     </label>
-                    <input onChange={(e)=>{props.setName(e.target.value)}} value={props.name} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+                    <input onChange={(e)=>{props.setName(e.target.value)}} value={props.name} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
                 </div>
 
                 <div className="flex items-center justify-between">

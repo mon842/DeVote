@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-
+    "@emailjs/browser": "^3.4.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
@@ -11,11 +11,13 @@
     "@mui/material": "^5.14.6",
     "@mui/styled-engine-sc": "^5.14.6",
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
-    "@nomiclabs/hardhat-ethers": "^2.2.2",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@testing-library/jest-dom": "^5.16.5",
-
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@web3uikit/core": "^1.1.5",
+    "@web3uikit/icons": "^1.1.2",
+    "@web3uikit/web3": "^0.3.2",
     "dotenv": "^16.3.1",
     "ethers": "^5.7.1",
     "hardhat": "^2.13.0",

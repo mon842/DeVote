@@ -1,6 +1,7 @@
 import { useEffect, useState, React } from 'react'
 import './Header.css';
 import logo from '../logo.png';
+import PurpleHead from '../Ui/PurpleHead';
 
 const Header = () => {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -52,19 +53,19 @@ const Header = () => {
     <nav className={`z-10 fixed top-0 left-0 right-0  h-24 flex justify-between items-center py-[24px] md:px-6 lg:px-6 bg-[#141420] ${navblur}`}>
       <div className='flex gap-2'>
         <img className='h-20' src={logo} alt="ar" srcset="" />
-        <h1 className="flex items-center text-white font-bold">De<span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600  via-[#c905ff] to-purple-500">vote</span> </h1>
+        <h1 className="flex items-center text-white font-bold">De <PurpleHead text={'Vote'} /> </h1>
       </div>
 
 
       <ul className={`rounded-xl sm:mt-3 flex px-3 justify-between items-center space-x-10 nav-menu sm:bg-opacity-0 text-white ${blur} bg-[#141420] ${act} `}>
         <li className='nav-item'>
-          <a href='\' className="ml-10">Home</a>
+          <a href='\' className="ml-10 hover:text-purple-500 hover:border-b border-purple-500">Home</a>
         </li>
         <li className='nav-item'>
-          <a href='\About' className="nav-link">About</a>
+          <a href='\About' className="nav-link hover:text-purple-500 hover:border-b border-purple-500">About</a>
         </li>
         <li className='nav-item'>
-          <a href='\Contract' className="nav-link">Contract</a>
+          <a href='\Contract' className="nav-link hover:text-purple-500 hover:border-b border-purple-500">Contract</a>
         </li>
         <li className='mb-8 md:mb-0 '>
           <div className="relative group">

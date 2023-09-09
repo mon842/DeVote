@@ -73,7 +73,7 @@ const Connected = (props) => {
 
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-20">
         <table className="w-full text-sm text-left text-gray-100 ">
-          <thead className="text-xs text-gray-100 uppercase from-gray-900 via-purple-800 to-purple-900 ">
+          <thead className="text-xs text-gray-100 uppercase  ">
             <tr>
               <th scope="col" className="px-6 py-3">
                 Index
@@ -88,8 +88,10 @@ const Connected = (props) => {
               <th scope="col" className=""></th>
             </tr>
           </thead>
+
           <tbody>
             {props.candidates.map((candidate, index) => (
+              
               <tr
                 key={index}
                 className="bg-gradient-to-r from-gray-900 via-purple-800 to-purple-900 "
@@ -124,20 +126,8 @@ const Connected = (props) => {
                   </a>
                 </td>
 
-                <td className="px-6py-5">
-                  {candidate.index === props.number ? (
-                    <button
-                      className="button w-24 h-10   cursor-pointer select-none active:translate-y-2  
-                                                active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841] active:border-b-[0px] 
-                                                transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841] 
-                                                rounded-full  border-[1px] border-red-800 bg-red-800"
-                      value={candidate.index}
-                      onClick={click}
-                    >
-                      Vote
-                    </button>
-                  ) : (
-                    <button
+                <td className="px-6 py-5">
+                <button
                       className="button w-24 h-10   cursor-pointer select-none active:translate-y-2  
                                                 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841] active:border-b-[0px] 
                                                 transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841] 
@@ -147,11 +137,11 @@ const Connected = (props) => {
                     >
                       Vote
                     </button>
-                  )}
                 </td>
               </tr>
             ))}
           </tbody>
+
         </table>
       </div>
       <Snackbar

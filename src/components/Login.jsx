@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import Header from "./Header/Header";
 import logo from './logo.png'
 import Form from "./Form/Form";
+import About from "./About/About";
+import PurpleHead from "./Ui/PurpleHead";
+import Contact from "./Contact/Contact";
+import Paragraph from "./Ui/Paragraph";
 
-
+import {def} from './constants'
 
 const Login = (props) => {
     const [show, setShow] = useState('left-[-300px]');
@@ -21,12 +25,12 @@ const Login = (props) => {
         <div className=" bg-[#141420]  grid justify-items-center ">
             <Header />
 
-            <div className="pt-32   grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2">
+            <div className="pt-32  mb-10 grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2">
 
                 <div className="px-16 relative">
-                    <h1 className="welcome-message text-white font-bold">Welcome to decentralized <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600  via-[#c905ff] to-purple-500">voting</span> application</h1>
+                    <h1 className="welcome-message ">Welcome to decentralized <PurpleHead text={'voting'}/> application</h1>
 
-                    <p className="my-6 text-gray-600 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea debitis nostrum corporis mollitia quaerat! Modi ab enim error odio in sequi doloremque. Odio pariatur deleniti reprehenderit dolore. Aliquam, nam sed!</p>
+                    <Paragraph text={def}/>
 
 
                     <div class="relative group w-32">
@@ -41,9 +45,9 @@ const Login = (props) => {
                 </div>
                 <img className="lg:ml-16 mt-12  md:mt-0 px-16" src={logo} alt="" />
             </div>
-            <div className="h-96">
 
-            </div>
+            <About/>
+            <Contact/>
         </div>
     )
 }
