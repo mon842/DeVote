@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 // import Lottie from "lottie-react";
 // import clock from '../clock.json';
-import { Button, IconButton, Snackbar } from "@mui/material";
+// import { Button, IconButton, Snackbar } from "@mui/material";
+// import CloseIcon from '@mui/icons-material/Close';
+
+import { Button, IconButton ,Snackbar} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 
 const Connected = (props) => {
