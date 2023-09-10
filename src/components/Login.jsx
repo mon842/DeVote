@@ -6,7 +6,7 @@ import About from "./About/About";
 import PurpleHead from "./Ui/PurpleHead";
 import Contact from "./Contact/Contact";
 import Paragraph from "./Ui/Paragraph";
-
+import Team from "./About/Team";
 import {def} from './constants'
 
 const Login = (props) => {
@@ -47,6 +47,7 @@ const Login = (props) => {
             </div>
 
             <About/>
+            <Team/>
             <Contact/>
         </div>
     )

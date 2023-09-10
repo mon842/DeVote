@@ -53,7 +53,7 @@ const Header = () => {
     <nav className={`z-10 fixed top-0 left-0 right-0  h-24 flex justify-between items-center py-[24px] md:px-6 lg:px-6 bg-[#141420] ${navblur}`}>
       <div className='flex gap-2'>
         <img className='h-20' src={logo} alt="ar" srcset="" />
-        <h1 className="flex items-center text-white font-bold">De <PurpleHead text={'Vote'} /> </h1>
+        <h1 className="flex items-center text-white font-bold text-3xl">De <PurpleHead text={'Vote'} /> </h1>
       </div>
 
 
