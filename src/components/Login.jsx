@@ -28,7 +28,7 @@ const Login = (props) => {
             <div className="pt-32  mb-10 grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2">
 
                 <div className="px-16 relative">
-                    <h1 className="welcome-message ">Welcome to decentralized <PurpleHead text={'voting'}/> application</h1>
+                    <h1 className="welcome-message ">Welcome to Decentralized <PurpleHead text={'Voting'}/> Application</h1>
 
                     <Paragraph text={def}/>
 

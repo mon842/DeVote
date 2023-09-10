@@ -9,7 +9,7 @@ module.exports = {
   solidity: "0.8.7",
   networks: {
     mumbai: {
-      url: "https://polygon-mumbai.g.alchemy.com/v2/bjhYe6hS0hpkrZFFuSYZ9_ipDr26HgNV",
+      url: "https://polygon-mumbai.g.alchemy.com/v2/EdS8JHP8XrVS9XR5PMzsVWOH1Q5rdw-F",
       accounts: [
         "179970732eaa8d91cd2abf6a6b4a4e4e79f9f3f5c550ae3f36ebcf68b0717af9",
       ],

@@ -20,7 +20,7 @@ const Voting = () => {
   const [name, setName]=useState('');
   const [number, setNumber] = useState('');
   const [CanVote, setCanVote] = useState(true);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   useEffect(() => {
     getCandidates();
@@ -50,6 +50,7 @@ const Voting = () => {
     const tx = await contractInstance.vote(number);
     await tx.wait();
     canVote();
+    
   }
 
 
