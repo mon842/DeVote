@@ -20,7 +20,8 @@ const Voting = () => {
   const [name, setName]=useState('');
   const [number, setNumber] = useState('');
   const [CanVote, setCanVote] = useState(true);
-  const [open, setOpen] = useState(true);
+  const [not, setNot] = useState(false);
+  const [Already, setAlready] = useState(false);
 
   useEffect(() => {
     getCandidates();
@@ -39,7 +40,7 @@ const Voting = () => {
 
 
   async function vote() {
-    setOpen(true);
+    
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
@@ -50,7 +51,8 @@ const Voting = () => {
     const tx = await contractInstance.vote(number);
     await tx.wait();
     canVote();
-    
+    setAlready(true);
+    setNot(true);
   }
 
 
@@ -93,7 +95,6 @@ const Voting = () => {
       contractAddress, contractAbi, signer
     );
     const status = await contractInstance.getVotingStatus();
-    // console.log(status);
     setVotingStatus(status);
   }
 
@@ -147,8 +148,8 @@ const Voting = () => {
     <div className='bg-[#141420]'>
 
       {votingStatus ? (isConnected ? (<Connected
-        open={open}
-        setOpen={setOpen}
+        not={not}
+        setNot={setNot}
         account={account}
         name={name}
         candidates={candidates}
@@ -156,6 +157,7 @@ const Voting = () => {
         number={number}
         handleNumberChange={handleNumberChange}
         voteFunction={vote}
+        Already={Already}
         showButton={CanVote} />)  : (<Login connectWallet={connectToMetamask} setName={setName} name={name}/>)) : (<Finished account={account} />)}
 
         {/* <Connected

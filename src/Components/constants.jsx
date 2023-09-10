@@ -6,4 +6,7 @@ const reason=[
 const def="Decentralized voting refers to a voting system in which the management and control of the voting process are distributed throughout a network of nodes (Proof Of Work) as opposed to being under the control of a single central authority or body or an instituition."
 
 const title=[ "proof of work" , "Peer-to-Peer Network" , "Transparency" ]
-export {reason, def,title}
+
+const img=['../assets/chor1.jpg', '../assets/chor2.jpg', '../assets/chor3.jpg', '../assets/chor4.jpg'];
+
+export {reason, def,title,img}

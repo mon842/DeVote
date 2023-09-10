@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Button, IconButton, } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-
-import PurpleHead from './Ui/PurpleHead'
+import React from "react";
 
 import { Blockie } from "@web3uikit/web3";
-import {  useNotification } from "@web3uikit/core";
-// import {No } from "@web3uikit";
+import { Modal } from "@web3uikit/core";
+
+import chor1 from '../assets/chor1.jpg'
+import chor2 from '../assets/chor2.jpg'
+import chor3 from '../assets/chor3.jpg'
+import chor4 from '../assets/chor4.jpg'
+
+const Icon=[chor1,chor2,chor3,chor4]
 
 const Connected = (props) => {
 
@@ -17,25 +19,12 @@ const Connected = (props) => {
         props.account.length
     );
 
-    const dispatch = useNotification();
-
-    const handleNewNotification = () => {
-        dispatch({
-            type: 'info',
-            message: 'Somebody messaged you',
-            title: 'New Notification',
-            position:  'topR',
-        });
-    };
-
-
-
     const click = (e) => {
 
         props.handleNumberChange(e);
     };
 
-    const add=(a)=>{return parseInt(a)+1;}
+    const add = (a) => { return parseInt(a) + 1; }
     return (
         <div className=" h-screen relative text-white px-5 md:px-10 py-6">
 
@@ -57,14 +46,27 @@ const Connected = (props) => {
             </div>
 
 
-            {props.number &&
+            {props.number && !props.Already &&
                 <div className="w-full flex justify-center">
                     <button
                         className="text-lg md:text-2xl hover:outline-none hover:ring hover:ring-fuchsia-600 transition duration-200 ease-in transform   hover:scale-105 px-4 py-1 md:px-20 md:py-4 rounded-3xl font-bold text-gray-400 hover:text-white bg-[#262636] hover:bg-gradient-to-r from-[#ff05c9] via-[#c905ff] to-[#8402cf]"
                         onClick={props.voteFunction}
                     >
 
-                        <p className="text-lg">confirm vote : <span> {add(props.number) }</span>  </p>
+                        <p className="text-lg">confirm vote : <span> {add(props.number)}</span>  </p>
+
+
+                    </button>
+                </div>
+            }
+            {
+                props.Already &&
+                <div className="w-full flex justify-center">
+                    <button
+                        className="text-lg md:text-2xl hover:outline-none hover:ring hover:ring-fuchsia-600 transition duration-200 ease-in transform   hover:scale-105 px-4 py-1 md:px-20 md:py-4 rounded-3xl font-bold text-gray-400 hover:text-white bg-[#262636] hover:bg-gradient-to-r from-[#ff05c9] via-[#c905ff] to-[#8402cf]"
+                    >
+
+                        <p className="text-lg"> You Have Already Voted </p>
 
 
                     </button>
@@ -76,18 +78,22 @@ const Connected = (props) => {
                 <tbody>
                     {
                         props.candidates.map((candidate, index) => (
-                            <tr key={index} className="px-1 grid grid-cols-3 drop-shadow-2xl  h-20 rounded-lg bg-slate-800 text-gray-100 my-4 ">
-
-                                <td className="m-4 text-xl">
-                                    <p className="text-lg md:text-2xl font-bold">{candidate.name}</p>
+                            <tr key={index} className="px-1 grid grid-cols-4 drop-shadow-2xl  h-20 rounded-lg bg-slate-800 text-gray-100 my-4 ">
+                                
+                                <td className="flex justify-center items-center">
+                                    <img className="w-9 h-9 md:w-12 md:h-12 rounded-full" src={Icon[index]} alt="" />
                                 </td>
 
-                                <td className="mt-3 flex justify-center">
+                                <td className="flex justify-center items-center text-xl">
+                                    <p className="text-sm  md:text-2xl font-bold">{candidate.name}</p>
+                                </td>
+
+                                <td className="flex justify-center items-center ">
                                     <p>{candidate.voteCount}</p>
                                 </td>
 
-                                <td className="m-2 flex justify-center" >
-                                    <button value={candidate.index} onClick={click} className="text-base md:text-2xl hover:outline-none hover:ring hover:ring-fuchsia-600 transition duration-200 ease-in transform   hover:scale-105 px-4 py-1 md:px-20 md:py-4 rounded-3xl font-bold text-gray-400 hover:text-white bg-[#262636] hover:bg-gradient-to-r from-[#ff05c9] via-[#c905ff] to-[#8402cf]">
+                                <td className="flex justify-center" >
+                                    <button value={candidate.index} onClick={click} className="text-sm md:text-2xl hover:outline-none hover:ring hover:ring-fuchsia-600 transition duration-200 ease-in transform   hover:scale-105 px-4 py-1 lg:px-20 lg:py-2 rounded-3xl font-bold text-gray-400 hover:text-white bg-[#262636] hover:bg-gradient-to-r from-[#ff05c9] via-[#c905ff] to-[#8402cf]">
                                         VOTE
                                     </button>
                                 </td>
@@ -97,16 +103,31 @@ const Connected = (props) => {
                 </tbody>
             </table>
 
-            {/* {
-                props.open &&
-                <Button
-                text="Error"
-                onClick={handleNewNotification}
-                theme="colored"
-                color="red"
-                isFullWidth={true}
-            />
-            } */}
+            {
+                props.not &&
+                <div>
+                    <Modal
+                        headerHasBottomBorder
+                        id="regular"
+                        isVisible
+                        onCancel={()=>{props.setNot(false)}}
+                        onCloseButtonPressed={()=>{props.setNot(false)}}
+                        onOk={()=>{props.setNot(false)}}
+                    >
+                        <div
+                            style={{
+                                display: 'grid',
+                                placeItems: 'center'
+                            }}
+                        >
+                            <p>
+                                Successfully Voted{' '}
+
+                            </p>
+                        </div>
+                    </Modal>
+                </div>
+            }
         </div>
     );
 };
