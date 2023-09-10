@@ -1,7 +1,7 @@
 
 import { NotificationProvider } from '@web3uikit/core';
 import './App.css';
-import Voting from './components/Voting/Voting';
+import Voting from './Components/Voting/Voting';
 
 function App() {
 
